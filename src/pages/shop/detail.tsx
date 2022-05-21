@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { NavBar } from 'antd-mobile';
 import * as TestAction from "../../api/request/shop";
 import { resetDocumentTitle } from '@helper/biz';
@@ -16,8 +16,8 @@ interface GoodsItem {
 	url: any;
 }
 export default () => {
-	const history = useHistory();
-	const id = useParams<RouterParams>().id
+	const navigate = useNavigate();
+	const id = useParams<any>().id
 	const [pageStatus, setPageStatus] = useState<IBiz.IPageStatus>({
 		loading: true,
 		success: true,
@@ -43,13 +43,13 @@ export default () => {
 				success: true,
 			});
 		} catch (e) {
-			console.log('e=====>：', e);
+			console.log('e----->：', e);
 		}
 	}
 
 	return (
 		<PageLayout {...{ ...pageStatus }}>
-			<NavBar onBack={() => history.goBack()}>详情</NavBar>
+			<NavBar onBack={() => navigate(-1)}>详情</NavBar>
 		</PageLayout>
 	);
 };

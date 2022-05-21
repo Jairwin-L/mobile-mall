@@ -12,7 +12,7 @@ import {
   Switch,
 	NavBar,
 } from 'antd-mobile'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { resetDocumentTitle } from '@helper/biz'
 // import Form from '@components/form';
 
@@ -26,17 +26,17 @@ const list = [
 ]
 
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	useEffect(() => {
 		resetDocumentTitle('登录');
 	}, [])
 	const onFormBlur = (item: any) => {
-		console.log('item=====>：', item);
+		console.log('item----->：', item);
 	}
 	return (
 		<>
 			{/* <Form list={list} onFormBlur={onFormBlur} /> */}
-			<NavBar onBack={() => history.goBack()}>登录</NavBar>
+			<NavBar onBack={() => navigate(-1)}>登录</NavBar>
 			<Form
         name='form'
         // onFinish={onFinish}

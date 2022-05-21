@@ -1,17 +1,17 @@
 import { useEffect } from 'react'
 import '@css/mine/operation.less'
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { NavBar } from 'antd-mobile';
 import { resetDocumentTitle } from '@helper/biz';
 
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	useEffect(() => {
 		resetDocumentTitle('运营')
 	}, [])
 	return (
 		<>
-			<NavBar onBack={() => history.goBack()}>运营</NavBar>
+			<NavBar onBack={() => navigate(-1)}>运营</NavBar>
 		</>
 	)
 }

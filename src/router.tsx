@@ -1,5 +1,4 @@
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
-// import loadable from './utils/loadable'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Main from './pages/main'
 import Category from './pages/category'
 import Shop from './pages/shop'
@@ -15,32 +14,28 @@ import AddressAdd from './pages/mine/address/add'
 import AddressEdit from './pages/mine/address/edit'
 import Login from './pages/auth/login'
 import Demo from './pages/demo/demo'
-
-// import AddressRouter from './pages/mine/address/router'
-
-
-// const Main = loadable(() => import('./pages/main'))
+import NotFound from '@pages/auth/not-found'
 
 const Router = () => (
 	<BrowserRouter>
-		<Switch>
-			<Route path="/" exact component={Main} />
-			<Route path="/category" exact component={Category} />
-			<Route path="/shop" exact component={Shop} />
-			<Route path="/detail/:id" exact component={Detail} />
-			<Route path="/mine" exact component={Mine} />
-			<Route path="/order" exact component={Order} />
-			<Route path="/help" exact component={Help} />
-			<Route path="/collection" exact component={Collection} />
-			<Route path="/change-password" exact component={ChangePassword} />
-			<Route path="/ad" exact component={Ad} />
-			<Route path="/address/list" exact component={Address} />
-			<Route path="/address/add" exact component={AddressAdd} />
-			<Route path="/address/edit" exact component={AddressEdit} />
-			<Route path="/auth/login" exact component={Login} />
-			<Route path="/demo" exact component={Demo} />
-			<Redirect to="/not-found" />
-		</Switch>
+		<Routes>
+			<Route path="/" element={<Main />} />
+			<Route path="/category" element={<Category />} />
+			<Route path="/shop" element={<Shop />} />
+			<Route path="/detail/:id" element={<Detail />} />
+			<Route path="/mine" element={<Mine />} />
+			<Route path="/order" element={<Order />} />
+			<Route path="/help" element={<Help />} />
+			<Route path="/collection" element={<Collection />} />
+			<Route path="/change-password" element={<ChangePassword />} />
+			<Route path="/ad" element={<Ad />} />
+			<Route path="/address/list" element={<Address />} />
+			<Route path="/address/add" element={<AddressAdd />} />
+			<Route path="/address/edit" element={<AddressEdit />} />
+			<Route path="/auth/login" element={<Login />} />
+			<Route path="/demo" element={<Demo />} />
+			<Route path="*" element={<NotFound />} />
+		</Routes>
 	</BrowserRouter>
 )
 export default Router

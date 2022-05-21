@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PageLayout from '@components/page-layout1'
 import Icon from "@components/icon";
 import { NavBar } from 'antd-mobile';
@@ -10,7 +10,7 @@ import { resetDocumentTitle } from '@helper/biz';
 import { PageStatusEnum } from '@constants';
 
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const [pageStatus, setPageStatus] = useState<IBiz.PageStatus>(PageStatusEnum.NORMAL);
 	const [list, setList] = useState<any>([]);
 	useEffect(() => {
@@ -34,12 +34,12 @@ export default () => {
 		}
 	}
 	const onEditAddress = (item: any) => {
-		history.push(`/address/edit?id=${item.id}`);
+		navigate(`/address/edit?id=${item.id}`);
 	}
 	return (
 		<>
 			<PageLayout {...{ pageStatus }} onRetry={() => fetchList()}>
-				<NavBar onBack={() => history.goBack()}>地址管理</NavBar>
+				<NavBar onBack={() => navigate(-1)}>地址管理</NavBar>
 				<div className="address_container">
 					<ul>
 						{
@@ -54,7 +54,7 @@ export default () => {
 						}
 					</ul>
 				</div>
-				<div className="add_container" onClick={() => history.push('/address/add')}>
+				<div className="add_container" onClick={() => navigate('/address/add')}>
 					<Icon type="iconicon-test" className="icon_add" />
  				添加收货地址
  			</div>

@@ -342,7 +342,7 @@ export const getQueryString = (url: any, name: any) => {
 export const getQueryParams = (params: any) => {
 	let search: any = {};
 	let searchArray: any = [];
-	console.log('status=====>：', status);
+	console.log('status----->：', status);
 	for (const [key, value] of new URLSearchParams(params)) {
 		searchArray.push({
 			label: key,

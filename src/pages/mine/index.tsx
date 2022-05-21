@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import PageLayout from '@components/page-layout1'
 import SimpleLine from '@components/simple-line'
 import '@css/mine/index.less'
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Order } from '@typings/const';
 import { ORDER_OPTION } from './order';
 import { Icon } from "@components";
@@ -42,7 +42,7 @@ const simpleLineList = [
 	},
 ]
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	useEffect(() => {
 		resetDocumentTitle('我的');
 	}, [])
@@ -56,7 +56,7 @@ export default () => {
 				</div>
 			</section>
 			<div className="common_block order_container">
-				<div className="order_all" onClick={() => history.push('/order?status=ALL')}>
+				<div className="order_all" onClick={() => navigate('/order?status=ALL')}>
 					<span className="order_text">我的订单</span>
 					<div>
 						<span className="order_margin">查看全部订单</span>
@@ -68,7 +68,7 @@ export default () => {
 						{
 							ORDER_OPTION.map((item: Order) => {
 								return (
-									<div className="order_item" key={item.value} onClick={() => history.push(`/order?status=${item.value}`)}>
+									<div className="order_item" key={item.value} onClick={() => navigate(`/order?status=${item.value}`)}>
 										<Icon type={item.icon} className="order_icon" />
 										<span className="order_status">{item.label}</span>
 									</div>

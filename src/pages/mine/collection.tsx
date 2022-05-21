@@ -1,15 +1,15 @@
 import { useEffect } from 'react'
 import { NavBar } from 'antd-mobile';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { resetDocumentTitle } from '@helper/biz';
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	useEffect(() => {
 		resetDocumentTitle('收藏');
 	}, [])
 	return (
 		<>
-			<NavBar onBack={() => history.goBack()}>收藏</NavBar>
+			<NavBar onBack={() => navigate(-1)}>收藏</NavBar>
 		</>
 	)
 }

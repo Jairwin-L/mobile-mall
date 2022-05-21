@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { useForm, SubmitHandler } from "react-hook-form";
 import { useForm, Resolver } from 'react-hook-form';
 import PageLayout from '@components/page-layout1'
@@ -26,7 +26,7 @@ const resolver: Resolver<FormValues> = async (values) => {
 	};
 };
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const [pageStatus, setPageStatus] = useState<IBiz.PageStatus>(PageStatusEnum.NORMAL);
 	// const { register, handleSubmit } = useForm<FormValues>();
 	// const onSubmit: SubmitHandler<FormValues> = data => console.log(data);
@@ -50,11 +50,11 @@ export default () => {
 	}
 	const onAddAddress = async () => {
 		const data = await '1234';
-		console.log('data=====>：', data);
+		console.log('data----->：', data);
 	}
 	return (
 		<PageLayout {...{ pageStatus }}>
-			<NavBar onBack={() => history.goBack()}>添加地址</NavBar>
+			<NavBar onBack={() => navigate(-1)}>添加地址</NavBar>
 			{/* <form onSubmit={handleSubmit(onSubmit)}>
 				<input {...register("firstName")} />
 				<input {...register("lastName")} />

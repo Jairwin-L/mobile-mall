@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import PageLayout from '@components/page-layout1'
 import { NavBar } from 'antd-mobile';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { resetDocumentTitle } from '@helper/biz';
 import { PageStatusEnum } from '@constants';
 
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const [pageStatus, setPageStatus] = useState<IBiz.PageStatus>(PageStatusEnum.NORMAL);
 	useEffect(() => {
 		resetDocumentTitle('修改地址');
@@ -26,7 +26,7 @@ export default () => {
 	}
 	return (
 		<PageLayout {...{ pageStatus }}>
-			<NavBar onBack={() => history.goBack()}>修改地址</NavBar>
+			<NavBar onBack={() => navigate(-1)}>修改地址</NavBar>
 		</PageLayout>
 	);
 }

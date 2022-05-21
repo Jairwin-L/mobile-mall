@@ -1,4 +1,4 @@
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '@css/components/tab-bar.less'
 // @ts-ignore
 import { Icon } from '@components';
@@ -37,11 +37,11 @@ const tabList: TabItem[] = [
 	}
 ]
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const pathName = useLocation().pathname;
 	const onTabChange = (item: TabItem) => {
 		if (item.path === pathName) return;
-		history.push(`${item.path}`);
+		navigate(`${item.path}`);
 	}
 	return (
 		<>

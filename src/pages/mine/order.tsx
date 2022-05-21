@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { ORDER_MAP } from '../../constants';
 import { Order, OrderEnum, OrderValue } from '../../typings/const';
 import { getQueryParams } from '../../utils';
@@ -40,20 +40,20 @@ export const ORDER_OPTION: Order[] = [
 ]
 
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const params = useParams();
 	const location = useLocation();
-	console.log('new URLSearchParams=====>：', new URLSearchParams(location.search));
+	console.log('new URLSearchParams----->：', new URLSearchParams(location.search));
 	// const status = getQueryString(location.search, 'status');
 	const query = getQueryParams(location.search);
-	console.log('query=====>：', query);
+	console.log('query----->：', query);
 	const [orderStatus, setOrderStatus] = useState<OrderValue>(query.status || OrderEnum.ALL)
 	useEffect(() => {
 		resetDocumentTitle('订单');
 	}, [])
 	return (
 		<>
-			<NavBar onBack={() => history.goBack()}>订单</NavBar>
+			<NavBar onBack={() => navigate(-1)}>订单</NavBar>
 			<div className="order_list_container">
 				<div className="order_list">
 					{

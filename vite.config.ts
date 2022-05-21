@@ -73,6 +73,7 @@ export default defineConfig({
       "@": resolvePath("src"),
       "@constants": resolvePath("src/constants"),
       "@components": resolvePath("src/components"),
+      "@pages": resolvePath("src/pages"),
       "@helper": resolvePath("src/helper"),
       "@api": resolvePath("src/api"),
       "@/mock": resolvePath("src/mock"),

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as TestAction from "../api/request/shop";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { resetDocumentTitle } from '@helper/biz';
 import { PageLayout } from '@components';
 import '@css/main.less'
@@ -14,7 +14,7 @@ interface GoodsItem {
 }
 
 export default () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const [list, setList] = useState<GoodsItem[]>([]);
 	const [pageStatus, setPageStatus] = useState<IBiz.IPageStatus>({
 		loading: true,
@@ -46,7 +46,7 @@ export default () => {
 		}
 	}
 	const onGoDetail = (item: GoodsItem) => {
-		history.push(`/detail/${item.id}`);
+		navigate(`/detail/${item.id}`);
 	}
 	const pageLayout = {
     ...pageStatus,
