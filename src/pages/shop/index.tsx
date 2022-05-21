@@ -161,7 +161,7 @@ export default () => {
 														value={item.count}
 														min={1}
 														max={100000}
-														onChange={value => onCalculatePrice(index, value)}
+														onChange={(value: number) => onCalculatePrice(index, value)}
 													/>
 												</div>
 											</div>

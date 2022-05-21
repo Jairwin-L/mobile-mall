@@ -80,11 +80,11 @@ export default () => {
 						<Fragment key={item.id}>
 							<h2 id={`anchor-${item.id}`}>{item.name}</h2>
 							{
-								item?.subCateList.map((subItem) => {
+								item?.subCateList.map((subItem: any) => {
 									return (
 										<Fragment key={subItem.id}>
 											{
-												subItem?.categoryList.map((subCateItem) => {
+												subItem?.categoryList.map((subCateItem: any) => {
 													return (
 														<ul className="sub_cate_item" key={subCateItem.id}>
 															<li>
