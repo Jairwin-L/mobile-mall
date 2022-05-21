@@ -1,4 +1,3 @@
-import React from 'react';
 import Loading from './loading';
 import { If } from './if';
 import { Exception, Footer, MobileTabBar } from '.';

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useHistory, useLocation } from 'react-router-dom';
 import '@css/components/tab-bar.less'
 // @ts-ignore

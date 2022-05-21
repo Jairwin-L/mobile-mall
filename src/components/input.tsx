@@ -1,4 +1,3 @@
-import React from 'react';
 import "@css/components/button.less";
 export interface IButton {
 	text?: string;

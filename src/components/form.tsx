@@ -1,8 +1,6 @@
-import React from 'react'
 import "@css/components/form.less";
 
 export default ({ list, onFormBlur }: any) => {
-	console.log('list=====>：', list);
 	return (
 		<>
 			{

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { RightOutlined } from '@ant-design/icons'
 import '@css/components/simple-line.less'

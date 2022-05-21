@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import './index.less';
 import Router from './router';
@@ -20,4 +20,4 @@ document.addEventListener('gesturestart', event => {
 	event.preventDefault()
 })
 
-ReactDOM.render(<React.StrictMode><Router /></React.StrictMode>, document.getElementById('mall'));
+ReactDOM.render(<StrictMode><Router /></StrictMode>, document.getElementById('mall'));

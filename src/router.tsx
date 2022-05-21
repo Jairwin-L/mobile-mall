@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 // import loadable from './utils/loadable'
 import Main from './pages/main'

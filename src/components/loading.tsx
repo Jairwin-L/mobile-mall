@@ -1,4 +1,3 @@
-import React from 'react';
 import { If } from './if';
 import '@css/components/loading.less';
 
