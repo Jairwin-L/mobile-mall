@@ -1,0 +1,19 @@
+.simple_item {
+  width: 90%;
+  height: 45px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+	.arrow_icon {
+		color: @pink;
+	}
+	.text {
+		display: flex;
+		flex: 1;
+		margin-left: 5px;
+	}
+  &:last-child {
+    border-bottom: 0;
+  }
+}

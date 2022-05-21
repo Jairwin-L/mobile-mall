@@ -1,0 +1,73 @@
+.g-container {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	.person-card {
+		width: 95%;
+		padding: 10px;
+		border-radius: 5px;
+		background-color: #fff;
+		display: flex;
+		background: #fff;
+		box-shadow: 1px 1px 4px 2px #eee;
+		margin-right: 60px;
+	}
+	
+	.info {
+		margin-left: 8px;
+		white-space: nowrap;
+		
+		span {
+				background: #673AB7;
+				border-radius: 5px;
+				color: #fff;
+				padding: 2px 6px;
+				margin-right: 6px;
+		}
+	}
+	
+	.person-card__name {
+		margin: 16px 0 8px;
+	}
+	
+	.person-card__desc {
+		line-height: 24px;
+		color: #8f8f92;
+	}
+	
+	.avatar {
+		width: 60px;
+		height: 60px;
+		background-image: url("https://avatars.githubusercontent.com/u/8554143?s=460&u=c322501aeb96b3f90f504512d501830b70894eae&v=4");
+		background-size: cover;
+		background-position: center;
+		display: block;
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
+	
+	.s-nowrap {
+		white-space: nowrap;
+	}
+	
+	.s-hidden {
+		width: 200px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	.s-multi {
+		width: 200px;
+		white-space: normal;
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+	
+	.inlineblock span {
+		display: inline-block;
+	}
+}

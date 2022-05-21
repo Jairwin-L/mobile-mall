@@ -1,0 +1,49 @@
+.order_list_container {
+	background: @white;
+	.order_list {
+		display: flex;
+		justify-content: space-around;
+		.key_container {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			.order_item_wrap {
+				height: 30px;
+				display: flex;
+				flex: 1;
+				.order_item {
+					display: flex;
+					align-items: center;
+					flex: 1;
+					justify-content: center;
+					color: @black;
+					transition: all .3s linear;
+				}
+			}
+			.order_item_selected {
+				display: flex;
+				align-items: center;
+				flex: 1;
+				justify-content: center;
+				color: @pink;
+				transition: all .3s linear;
+			}
+			.order_line {
+				display: flex;
+				justify-content: center;
+				.order_active {
+					width: 20px;
+					height: 2px;
+					background: @pink;
+					color: @pink;
+					transition: all .3s linear;
+				}
+				.order_line_none {
+					background: @white;	
+					height: 2px;
+					transition: all .3s linear;
+				}
+			}
+		}
+	}
+}

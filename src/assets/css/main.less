@@ -1,0 +1,47 @@
+.list_container {
+	width: 95%;
+	margin: 0 auto;
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			width: 48%;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			background: @white;
+			overflow: hidden;
+			border-radius: 5px;
+			&:nth-child(even) {
+				margin-right: 0;
+			}
+			img {
+				width: 100%;
+				height: 150px;
+			}
+			.goods_desc {
+				padding: 5px;
+				.title {
+					font-size: 12px;
+					margin-bottom: 5px;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					overflow: hidden;
+				}
+				.info {
+					font-size: 12px;
+					display: flex;
+					justify-content: space-between;
+					span {
+						&:first-child {
+							color: #ee6d3c;
+						}
+						&:last-child {
+							color: #999;
+						}
+					}
+				}
+			}
+		}
+	}
+}
