@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import PageLayout from '@components/page-layout1'
+import { PageLayout } from '@components'
 import SimpleLine from '@components/simple-line'
 import '@css/mine/index.less'
 import { useNavigate } from 'react-router-dom';

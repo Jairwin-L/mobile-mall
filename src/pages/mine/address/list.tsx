@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PageLayout from '@components/page-layout1'
+import { PageLayout } from '@components'
 import Icon from "@components/icon";
 import { NavBar } from 'antd-mobile';
 import '@css/mine/address.less'

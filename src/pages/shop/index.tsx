@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import PageLayout from '@components/page-layout1'
+import { PageLayout } from '@components'
 import * as TestAction from "@api/request/shop";
 import Icon from '@components/icon';
 import { FooterToolbar } from '@components';

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { useForm, SubmitHandler } from "react-hook-form";
 import { useForm, Resolver } from 'react-hook-form';
-import PageLayout from '@components/page-layout1'
+import { PageLayout } from '@components'
 import Button from '@components/button'
 import { NavBar } from 'antd-mobile';
 import { resetDocumentTitle } from '@helper/biz';

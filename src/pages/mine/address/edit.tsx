@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import PageLayout from '@components/page-layout1'
+import { PageLayout } from '@components'
 import { NavBar } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
 import { resetDocumentTitle } from '@helper/biz';
