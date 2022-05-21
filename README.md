@@ -2,4 +2,4 @@
 
 ## 技术栈
 
-`react 17` + `vite` + `react-router-dom` + `ts`
+`react v17` + `vite` + `react-router-dom v6` + `ts`
