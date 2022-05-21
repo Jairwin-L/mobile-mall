@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import { PageLayout } from '@components'
-import SimpleLine from '@components/simple-line'
+import { PageLayout, SimpleLine } from '@components'
 import '@css/mine/index.less'
 import { useNavigate } from 'react-router-dom';
 import { Order } from '@typings/const';

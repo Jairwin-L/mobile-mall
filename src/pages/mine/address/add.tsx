@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { useForm, SubmitHandler } from "react-hook-form";
 import { useForm, Resolver } from 'react-hook-form';
 import { PageLayout } from '@components'
-import Button from '@components/button'
-import { NavBar } from 'antd-mobile';
+import { Button, NavBar } from 'antd-mobile';
 import { resetDocumentTitle } from '@helper/biz';
 import { PageStatusEnum } from '@constants';
 type FormValues = {
@@ -81,7 +79,7 @@ export default () => {
 						<input type="email" placeholder="请输入地址" />
 					</li>
 					<li>
-						<Button type="primary" style={{ width: '100%' }} onClick={onAddAddress}></Button>
+						<Button color="primary" style={{ width: '100%' }} onClick={onAddAddress}></Button>
 					</li>
 				</ul>
 			</div>

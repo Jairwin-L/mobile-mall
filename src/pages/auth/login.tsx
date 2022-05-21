@@ -3,18 +3,10 @@ import {
   Form,
   Input,
   Button,
-  Dialog,
-  TextArea,
-  DatePicker,
-  Selector,
-  Slider,
-  Stepper,
-  Switch,
 	NavBar,
 } from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
 import { resetDocumentTitle } from '@helper/biz'
-// import Form from '@components/form';
 
 const list = [
 	{

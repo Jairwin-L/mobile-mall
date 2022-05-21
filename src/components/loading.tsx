@@ -1,4 +1,3 @@
-import { If } from './if';
 import '@css/components/loading.less';
 
 export default ({ text = '加载中...' }): JSX.Element => {
@@ -10,9 +9,9 @@ export default ({ text = '加载中...' }): JSX.Element => {
 					<div />
 					<div />
 				</div>
-				<If when={text}>
-					<span className="text">{text}</span>
-				</If>
+				{
+					text ? <span className="text">{text}</span> : null
+				}
 			</div>
 		</div>
 	);

@@ -5,3 +5,4 @@ export { default as MobileTabBar } from "./tab-bar";
 export { default as Icon } from "./icon";
 export { default as Loading } from "./loading";
 export { default as PageLayout } from "./page-layout";
+export { default as SimpleLine } from "./simple-line";
