@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
+import react from '@vitejs/plugin-react'
 import legacyPlugin from "@vitejs/plugin-legacy";
 // import { viteExternalsPlugin } from "vite-plugin-externals";
 // import externalGlobals from "rollup-plugin-external-globals";
@@ -11,6 +12,7 @@ export default defineConfig({
   plugins: [
     viteCompression(),
     reactRefresh(),
+    react(),
     legacyPlugin({
       targets: [
         "Android > 39",

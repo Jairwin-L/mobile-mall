@@ -1,5 +1,7 @@
 import { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+const container: any = document.getElementById('mall');
+const root = createRoot(container);
 import './index.less';
 import Router from './router';
 
@@ -20,4 +22,4 @@ document.addEventListener('gesturestart', event => {
 	event.preventDefault()
 })
 
-ReactDOM.render(<StrictMode><Router /></StrictMode>, document.getElementById('mall'));
+root.render(<StrictMode><Router /></StrictMode>);
