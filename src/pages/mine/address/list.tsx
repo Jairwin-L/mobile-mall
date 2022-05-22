@@ -7,11 +7,9 @@ import '@css/mine/address.less'
 import * as AddressAction from "../../../api/request/address";
 import { AddressItem } from '../../../api/response/address';
 import { resetDocumentTitle } from '@helper/biz';
-import { PageStatusEnum } from '@constants';
 
 export default () => {
 	const navigate = useNavigate();
-	const [pageStatus, setPageStatus] = useState<IBiz.PageStatus>(PageStatusEnum.NORMAL);
 	const [list, setList] = useState<any>([]);
 	useEffect(() => {
 		resetDocumentTitle('地址管理')
@@ -19,18 +17,13 @@ export default () => {
 	}, [])
 	const fetchList = async () => {
 		try {
-			setPageStatus(PageStatusEnum.LOADING);
 			const { data, success }: {
 				data: AddressItem[];
 				success: boolean;
 			} = await AddressAction.list();
-			if (!success) return setPageStatus(PageStatusEnum.ERROR);
 			setList(data);
-			setPageStatus(PageStatusEnum.NORMAL);
 		} catch (e) {
-			// e == null && Toast.fail({ title: ErrorType.SERVICE });
-			// e.status === 1 && Toast.fail({ title: ErrorType.SYSTEM });
-			setPageStatus(PageStatusEnum.ERROR);
+			console.log(e);
 		}
 	}
 	const onEditAddress = (item: any) => {
@@ -38,7 +31,7 @@ export default () => {
 	}
 	return (
 		<>
-			<PageLayout {...{ pageStatus }} onRetry={() => fetchList()}>
+			<PageLayout onRetry={() => fetchList()}>
 				<NavBar onBack={() => navigate(-1)}>地址管理</NavBar>
 				<div className="address_container">
 					<ul>

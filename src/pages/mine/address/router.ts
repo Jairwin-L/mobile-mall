@@ -1,5 +1,5 @@
 const prePath = '/address/'
-// import Address from './pages/mine/address/list'
+
 const router = [
 	{
 		path: 'list',

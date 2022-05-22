@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, Resolver } from 'react-hook-form';
 import { PageLayout } from '@components'
 import { Button, NavBar } from 'antd-mobile';
 import { resetDocumentTitle } from '@helper/biz';
-import { PageStatusEnum } from '@constants';
 type FormValues = {
 	firstName: string;
 	lastName: string;
@@ -25,7 +24,6 @@ const resolver: Resolver<FormValues> = async (values) => {
 };
 export default () => {
 	const navigate = useNavigate();
-	const [pageStatus, setPageStatus] = useState<IBiz.PageStatus>(PageStatusEnum.NORMAL);
 	// const { register, handleSubmit } = useForm<FormValues>();
 	// const onSubmit: SubmitHandler<FormValues> = data => console.log(data);
 	const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
@@ -36,14 +34,10 @@ export default () => {
 	}, [])
 	const fetchList = async () => {
 		try {
-			setPageStatus(PageStatusEnum.LOADING);
 			const data = await 'fetchList';
 			console.log(data);
-			setPageStatus(PageStatusEnum.NORMAL);
 		} catch (e) {
-			// e == null && Toast.fail({ title: ErrorType.SERVICE });
-			// e.status === 1 && Toast.fail({ title: ErrorType.SYSTEM });
-			setPageStatus(PageStatusEnum.ERROR);
+			console.log(e);	
 		}
 	}
 	const onAddAddress = async () => {
@@ -51,15 +45,8 @@ export default () => {
 		console.log('data----->：', data);
 	}
 	return (
-		<PageLayout {...{ pageStatus }}>
+		<PageLayout>
 			<NavBar onBack={() => navigate(-1)}>添加地址</NavBar>
-			{/* <form onSubmit={handleSubmit(onSubmit)}>
-				<input {...register("firstName")} />
-				<input {...register("lastName")} />
-				<input type="email" {...register("email")} />
-
-				<input type="submit" />
-			</form> */}
 			<form onSubmit={onSubmit}>
 				<input {...register("firstName")} placeholder="Bill" />
 				{errors?.firstName && <p>{errors.firstName.message}</p>}
