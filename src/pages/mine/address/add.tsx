@@ -1,17 +1,12 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PageLayout } from '@components'
 import { Button, Form, Input, NavBar } from 'antd-mobile';
-import { resetDocumentTitle } from '@helper/biz';
 
 export default () => {
 	const navigate = useNavigate();
 	const onFinish = async (values: any) => {
 		console.log('values----->：', values);
   }
-	useEffect(() => {
-		resetDocumentTitle('添加地址');
-	}, []);
 	return (
 		<PageLayout>
 			<NavBar onBack={() => navigate(-1)}>添加地址</NavBar>

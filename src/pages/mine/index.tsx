@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { PageLayout, SimpleLine } from '@components'
 import '@css/mine/index.less'
 import { useNavigate } from 'react-router-dom';
@@ -6,7 +5,6 @@ import { Order } from '@typings/const';
 import { ORDER_OPTION } from './order';
 import { Icon } from "@components";
 import { RightOutlined } from '@ant-design/icons';
-import { resetDocumentTitle } from '@helper/biz';
 
 const simpleLineList = [
 	{
@@ -42,9 +40,6 @@ const simpleLineList = [
 ]
 export default () => {
 	const navigate = useNavigate();
-	useEffect(() => {
-		resetDocumentTitle('我的');
-	}, [])
 	return (
 		<PageLayout {...{ tabbarFlag: true, footerFlag: true }}>
 			<section className="user_info">

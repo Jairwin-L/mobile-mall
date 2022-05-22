@@ -1,5 +1,5 @@
 export function resetDocumentTitle (title: IBiz.IResetDocumentTitle = '标题') {
-	document.title = `${title} · ${window.title}`
+	// document.title = `${title} · ${window.title}`
 }
 export function microMessengerEnv () {
 	const ua: string = window.navigator.userAgent.toLocaleLowerCase();

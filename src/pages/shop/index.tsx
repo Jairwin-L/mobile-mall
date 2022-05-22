@@ -6,7 +6,6 @@ import { FooterToolbar } from '@components';
 import { Dialog, Toast, SwipeAction, Stepper } from 'antd-mobile';
 import { SwipeActionRef } from 'antd-mobile/es/components/swipe-action'
 import { NUMBER_PLACEHOLDER } from '@constants/number';
-import { resetDocumentTitle } from '@helper/biz';
 import '@css/shop/index.less'
 
 export default () => {
@@ -119,7 +118,6 @@ export default () => {
 		},
   };
 	useEffect(() => {
-		resetDocumentTitle('购物车');
 		fetchList();
 	}, []);
 	return (

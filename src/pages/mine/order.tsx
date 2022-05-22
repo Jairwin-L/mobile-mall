@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Order, OrderEnum, OrderValue } from '../../typings/const';
 import { getQueryParams } from '../../utils';
 import '@css/mine/order.less';
 import { NavBar } from 'antd-mobile';
-import { resetDocumentTitle } from '@helper/biz';
 import { ORDER_MAP } from '@constants/biz';
 export const ORDER_OPTION: Order[] = [
 	{
@@ -41,16 +40,11 @@ export const ORDER_OPTION: Order[] = [
 
 export default () => {
 	const navigate = useNavigate();
-	const params = useParams();
 	const location = useLocation();
 	console.log('new URLSearchParams----->：', new URLSearchParams(location.search));
-	// const status = getQueryString(location.search, 'status');
 	const query = getQueryParams(location.search);
 	console.log('query----->：', query);
 	const [orderStatus, setOrderStatus] = useState<OrderValue>(query.status || OrderEnum.ALL)
-	useEffect(() => {
-		resetDocumentTitle('订单');
-	}, [])
 	return (
 		<>
 			<NavBar onBack={() => navigate(-1)}>订单</NavBar>

@@ -1,4 +1,3 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Main from '@pages/main'
 import Category from '@pages/category'
 import Shop from '@pages/shop'
@@ -19,16 +18,25 @@ import { ReactNode } from 'react'
 interface IRouter {
 	path: string;
 	element: ReactNode;
+	meta?: {
+		title: string;
+	}
 }
 
-const routers: IRouter[] = [
+export const routers: IRouter[] = [
 	{
 		path: '/',
 		element: <Main />,
+		meta: {
+			title: '首页',
+		}
 	},
 	{
 		path: '/category',
 		element: <Category />,
+		meta: {
+			title: '分类',
+		}
 	},
 	{
 		path: '/shop',
@@ -83,16 +91,3 @@ const routers: IRouter[] = [
 		element: <NotFound />,
 	},
 ]
-
-const Router = () => (
-	<BrowserRouter>
-		<Routes>
-			{
-				routers.map((item: IRouter) => {
-					return <Route key={item.path} path={item.path} element={item.element} />
-				})
-			}
-		</Routes>
-	</BrowserRouter>
-)
-export default Router

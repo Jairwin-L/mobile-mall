@@ -2,12 +2,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { NavBar } from 'antd-mobile';
 import * as TestAction from "../../api/request/shop";
-import { resetDocumentTitle } from '@helper/biz';
 import { PageLayout } from '@components';
-import '@css/shop/detail.less'
-interface RouterParams {
-	id: string
-}
+import '@css/shop/detail.less';
+
 interface GoodsItem {
 	id: string;
 	title: string;
@@ -24,7 +21,6 @@ export default () => {
 	});
 	const [model, setModel] = useState<GoodsItem>()
 	useEffect(() => {
-		resetDocumentTitle('详情');
 		fetchModel()
 	}, [id])
 	const fetchModel = async () => {

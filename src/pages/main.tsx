@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as TestAction from "../api/request/shop";
 import { useNavigate } from 'react-router-dom';
-import { resetDocumentTitle } from '@helper/biz';
 import { PageLayout } from '@components';
 import '@css/main.less'
 
@@ -21,7 +20,6 @@ export default () => {
 		success: true,
 	});
 	useEffect(() => {
-		resetDocumentTitle('首页');
 		fetchList();
 	}, []);
 	const fetchList = async () => {

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import {
   Form,
   Input,
@@ -6,7 +5,6 @@ import {
 	NavBar,
 } from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
-import { resetDocumentTitle } from '@helper/biz'
 
 const list = [
 	{
@@ -19,9 +17,6 @@ const list = [
 
 export default () => {
 	const navigate = useNavigate();
-	useEffect(() => {
-		resetDocumentTitle('登录');
-	}, [])
 	const onFormBlur = (item: any) => {
 		console.log('item----->：', item);
 	}
