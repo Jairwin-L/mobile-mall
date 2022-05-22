@@ -1,5 +1,5 @@
 import fly, { FlyResponse, FlyRequestConfig } from 'flyio'
-import config from './config'
+import { BASE_URL  } from './config'
 interface CommonResponse {
 	success: boolean;
 	msg: string;
@@ -219,4 +219,4 @@ class ApiRequest {
 	}
 }
 
-export default ApiRequest.getInstance(config.BASE_URL)
+export default ApiRequest.getInstance(BASE_URL);

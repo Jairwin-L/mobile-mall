@@ -25,9 +25,3 @@ export interface TopCateGory {
 	label: "推荐" | "居家生活" | "服饰鞋包" | "美食酒水" | "个护清洁" | "母婴亲子" | "运动旅行" | "数码家电" | "严选全球"
 	value: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 }
-
-export enum ApiUrl {
-	MOCK = 'https://www.fastmock.site/mock/43ab9e0a1ca79547bacc2b6caa62280b/api',
-	TEST = 'https://www.fastmock.site/mock/43ab9e0a1ca79547bacc2b6caa62280b/api',
-	PROD = 'https://www.fastmock.site/mock/43ab9e0a1ca79547bacc2b6caa62280b/api',
-}

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
-import { ORDER_MAP } from '../../constants';
 import { Order, OrderEnum, OrderValue } from '../../typings/const';
 import { getQueryParams } from '../../utils';
 import '@css/mine/order.less';
 import { NavBar } from 'antd-mobile';
 import { resetDocumentTitle } from '@helper/biz';
+import { ORDER_MAP } from '@constants/biz';
 export const ORDER_OPTION: Order[] = [
 	{
 		icon: "all",
