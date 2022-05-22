@@ -9,12 +9,14 @@ const API_ENV_URL = {
 	LOCAL: 'dev.jairwin.cn',
 	PREVIEW: 'dev.jairwin.cn:8061',
 	PROD: 'mall.jairwin.cn',
+	VERCEL: 'mobile-mall.vercel.app',
 }
 
 export const API_URL_MAP = {
 	[API_ENV_URL.LOCAL]: ApiUrl.MOCK,
-	[API_ENV_URL.PREVIEW]: ApiUrl.MOCK,
-	[API_ENV_URL.PROD]: ApiUrl.MOCK,
+	[API_ENV_URL.PREVIEW]: ApiUrl.PROD,
+	[API_ENV_URL.PROD]: ApiUrl.PROD,
+	[API_ENV_URL.VERCEL]: ApiUrl.PROD,
 }
 
 for (let [key, value] of Object.entries(API_URL_MAP)) {
