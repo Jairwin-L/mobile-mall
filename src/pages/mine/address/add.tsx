@@ -1,75 +1,37 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useForm, Resolver } from 'react-hook-form';
 import { PageLayout } from '@components'
-import { Button, NavBar } from 'antd-mobile';
+import { Button, Form, Input, NavBar } from 'antd-mobile';
 import { resetDocumentTitle } from '@helper/biz';
-type FormValues = {
-	firstName: string;
-	lastName: string;
-};
 
-const resolver: Resolver<FormValues> = async (values) => {
-	return {
-		values: values.firstName ? values : {},
-		errors: !values.firstName
-			? {
-				firstName: {
-					type: 'required',
-					message: 'This is required.',
-				},
-			}
-			: {},
-	};
-};
 export default () => {
 	const navigate = useNavigate();
-	// const { register, handleSubmit } = useForm<FormValues>();
-	// const onSubmit: SubmitHandler<FormValues> = data => console.log(data);
-	const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
-	const onSubmit = handleSubmit((data) => console.log(data));
+	const onFinish = async (values: any) => {
+		console.log('values----->：', values);
+  }
 	useEffect(() => {
 		resetDocumentTitle('添加地址');
-		fetchList();
-	}, [])
-	const fetchList = async () => {
-		try {
-			const data = await 'fetchList';
-			console.log(data);
-		} catch (e) {
-			console.log(e);	
-		}
-	}
-	const onAddAddress = async () => {
-		const data = await '1234';
-		console.log('data----->：', data);
-	}
+	}, []);
 	return (
 		<PageLayout>
 			<NavBar onBack={() => navigate(-1)}>添加地址</NavBar>
-			<form onSubmit={onSubmit}>
-				<input {...register("firstName")} placeholder="Bill" />
-				{errors?.firstName && <p>{errors.firstName.message}</p>}
-
-				<input {...register("lastName")} placeholder="Luo" />
-
-				<input type="submit" />
-			</form>
-			<div className="form_container">
-				<ul>
-					<li>
-						<span>姓名：</span>
-						<input type="text" placeholder="请输入姓名" />
-					</li>
-					<li>
-						<span>地址：</span>
-						<input type="email" placeholder="请输入地址" />
-					</li>
-					<li>
-						<Button color="primary" style={{ width: '100%' }} onClick={onAddAddress}></Button>
-					</li>
-				</ul>
-			</div>
+			<Form
+        layout='horizontal'
+				onFinish={onFinish}
+        footer={
+          <Button block type='submit' color='primary' size='large'>
+            提交
+          </Button>
+        }
+      >
+        <Form.Item
+          name='name'
+          label='姓名'
+          rules={[{ required: true, message: '姓名不能为空' }]}
+        >
+          <Input placeholder='请输入姓名' />
+        </Form.Item>
+      </Form>
 		</PageLayout>
 	);
 }

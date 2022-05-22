@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import { PageLayout } from '@components'
 import Icon from "@components/icon";
 import { NavBar } from 'antd-mobile';
-import '@css/mine/address.less'
 import * as AddressAction from "../../../api/request/address";
 import { AddressItem } from '../../../api/response/address';
 import { resetDocumentTitle } from '@helper/biz';
+import '@css/mine/address.less'
 
 export default () => {
 	const navigate = useNavigate();
 	const [list, setList] = useState<any>([]);
 	useEffect(() => {
-		resetDocumentTitle('地址管理')
+		resetDocumentTitle('地址')
 		fetchList();
 	}, [])
 	const fetchList = async () => {
