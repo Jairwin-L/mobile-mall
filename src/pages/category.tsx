@@ -7,7 +7,7 @@ import category from '../api/mock/data.json';
 // import { list } from "../api/request/category";
 // @ts-ignore
 const categoryData: IPageCategory.List[] = category.data.list;
-export default () => {
+export default function Category () {
   const mainElementRef = useRef<HTMLDivElement>(null);
 	const [list, setList] = useState<any[]>([]);
 	const [activeKey, setActiveKey] = useState<string>('');
@@ -36,11 +36,11 @@ export default () => {
       wait: 100,
     }
   )
-	function onChangeSideBar (key: string) {
+	const onChangeSideBar = (key: string) => {
 		if (key === activeKey) return;
 		document.getElementById(`anchor-${key}`)?.scrollIntoView();
 	}
-	async function fetchList () {
+	const fetchList = () => {
 		// setTimeout(() => {
 		// 	setPageStatus({
 		// 		loading: false,

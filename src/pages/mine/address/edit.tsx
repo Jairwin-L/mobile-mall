@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { PageLayout } from '@components'
 import { Button, Form, Input, NavBar } from 'antd-mobile';
 
-export default () => {
+export default function AddressEdit () {
 	const navigate = useNavigate();
 	const onFinish = async (values: any) => {
 		console.log('values----->：', values);

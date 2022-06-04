@@ -15,7 +15,7 @@ const list = [
 	}
 ]
 
-export default () => {
+export default function Login () {
 	const navigate = useNavigate();
 	const onFormBlur = (item: any) => {
 		console.log('item----->：', item);

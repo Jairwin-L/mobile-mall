@@ -9,7 +9,7 @@ export enum OrderEnum {
 	AFTER_SERVICES = "AFTER_SERVICES",
 }
 
-export interface Order {
+export interface OrderItem {
 	icon: "all" | "sale" | "pedding-pay" | "pedding-delivered" | "pedding-comment" | 'pedding-received',
 	label: OrderLabel
 	value: OrderValue

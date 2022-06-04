@@ -12,7 +12,7 @@ interface GoodsItem {
 	buyCount: number;
 	url: any;
 }
-export default () => {
+export default function GoodsDetail () {
 	const navigate = useNavigate();
 	const id = useParams<any>().id
 	const [pageStatus, setPageStatus] = useState<IBiz.IPageStatus>({

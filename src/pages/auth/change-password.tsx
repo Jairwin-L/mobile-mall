@@ -1,7 +1,7 @@
 import { NavBar } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
 
-export default () => {
+export default function ChangePassword () {
 	const navigate = useNavigate();
 	return (
 		<>

@@ -12,7 +12,7 @@ interface GoodsItem {
 	url: string;
 }
 
-export default () => {
+export default function Main () {
 	const navigate = useNavigate();
 	const [list, setList] = useState<GoodsItem[]>([]);
 	const [pageStatus, setPageStatus] = useState<IBiz.IPageStatus>({

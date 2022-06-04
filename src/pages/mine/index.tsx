@@ -1,7 +1,7 @@
 import { PageLayout, SimpleLine } from '@components'
 import '@css/mine/index.less'
 import { useNavigate } from 'react-router-dom';
-import { Order } from '@typings/const';
+import { OrderItem } from '@typings/const';
 import { ORDER_OPTION } from './order';
 import { Icon } from "@components";
 import { RightOutlined } from '@ant-design/icons';
@@ -38,7 +38,7 @@ const simpleLineList = [
 		path: '/change-password',
 	},
 ]
-export default () => {
+export default function Mine () {
 	const navigate = useNavigate();
 	return (
 		<PageLayout {...{ tabbarFlag: true, footerFlag: true }}>
@@ -60,7 +60,7 @@ export default () => {
 				<div className="order_list_container">
 					<div className="order_list">
 						{
-							ORDER_OPTION.map((item: Order) => {
+							ORDER_OPTION.map((item: OrderItem) => {
 								return (
 									<div className="order_item" key={item.value} onClick={() => navigate(`/order?status=${item.value}`)}>
 										<Icon type={item.icon} className="order_icon" />

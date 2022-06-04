@@ -82,6 +82,7 @@ export default defineConfig({
       "@utils": resolvePath("src/utils"),
       "@css": resolvePath("src/assets/css"),
       "@img": resolvePath("src/assets/img"),
+      "@typings": resolvePath("src/typings"),
     },
   },
 });

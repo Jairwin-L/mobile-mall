@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Order, OrderEnum, OrderValue } from '../../typings/const';
+import { OrderItem, OrderEnum, OrderValue } from '@typings/const';
 import { getQueryParams } from '../../utils';
 import '@css/mine/order.less';
 import { NavBar } from 'antd-mobile';
 import { ORDER_MAP } from '@constants/biz';
-export const ORDER_OPTION: Order[] = [
+export const ORDER_OPTION: OrderItem[] = [
 	{
 		icon: "all",
 		label: "全部",
@@ -38,7 +38,7 @@ export const ORDER_OPTION: Order[] = [
 	}
 ]
 
-export default () => {
+export default function Order () {
 	const navigate = useNavigate();
 	const location = useLocation();
 	console.log('new URLSearchParams----->：', new URLSearchParams(location.search));
@@ -51,7 +51,7 @@ export default () => {
 			<div className="order_list_container">
 				<div className="order_list">
 					{
-						ORDER_OPTION.map((item: Order) => {
+						ORDER_OPTION.map((item: OrderItem) => {
 							return (
 								<div className="key_container" key={item.value}>
 									<div className="order_item_wrap">

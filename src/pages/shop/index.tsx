@@ -8,7 +8,7 @@ import { SwipeActionRef } from 'antd-mobile/es/components/swipe-action'
 import { NUMBER_PLACEHOLDER } from '@constants/number';
 import '@css/shop/index.less'
 
-export default () => {
+export default function Shop () {
 	const swipeActionRef = useRef<SwipeActionRef>(null);
   const [allSelected, setAllSelected] = useState<any>(false);
   const [list, setList] = useState<any>([]);
@@ -47,7 +47,7 @@ export default () => {
 		}
 	}
 	// 下单支付
-	function onPayOrder () {
+	const onPayOrder = () => {
 		if (selectedList.length <= 0) {
 			Toast.show({
 				content: '您还没有选择宝贝哦',
@@ -56,7 +56,7 @@ export default () => {
 		}
   }
 	// 商品删除
-  function onDel () {
+  const onDel = () => {
 		if (selectedList.length <= 0) {
 			Toast.show({
 				content: '您还没有选择宝贝哦',
@@ -65,7 +65,7 @@ export default () => {
 		}
   }
 	// 单个购物车删除
-	function onDelSingleItem (item: any) {
+	const onDelSingleItem = (item: any) => {
 		Dialog.confirm({
 			content: `确定要删除“${item.title || NUMBER_PLACEHOLDER}”嘛？`,
 			onConfirm: () => {
@@ -76,12 +76,12 @@ export default () => {
 		swipeActionRef.current?.close();
 	}
 	// 单个商品选择和不选择
-  function onToggleSelected (index: number) {
+  const onToggleSelected = (index: number) => {
 		list[index].isSelected = !list[index].isSelected;
 		getSelectedShop(list, list);
   }
 	// 单个商品价格计算
-	function onCalculatePrice (index: number, value: number) {
+	const onCalculatePrice = (index: number, value: number) => {
 		list[index].count = value;
 		const priceList = list.filter((item: any) => item.isSelected);
 		const total = priceList.reduce((acc: any, cur: any) => acc + cur.price * cur.count, 0);
@@ -89,7 +89,7 @@ export default () => {
 		setList([...list]);
   }
 	// 全选和非全选
-	function onSelectedAll () {
+	const onSelectedAll = () => {
 		const dataList = list?.map((item: any) => {
 			return {
 				...item,
@@ -99,7 +99,7 @@ export default () => {
 		getSelectedShop(dataList, dataList);
 	}
 	// 计算已选商品价格
-	function getSelectedShop (selectedShopList: any, originList: any) {
+	const getSelectedShop = (selectedShopList: any, originList: any) => {
 		const priceList = selectedShopList.filter((item: any) => item.isSelected);
 		const total = priceList.reduce((acc: any, cur: any) => acc + cur.price * cur.count, 0);
 		setTotalPrice(total);

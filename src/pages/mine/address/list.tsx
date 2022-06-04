@@ -6,7 +6,7 @@ import { Icon, PageLayout } from '@components';
 import { NavBar } from 'antd-mobile';
 import '@css/mine/address.less';
 
-export default () => {
+export default function Address () {
 	const navigate = useNavigate();
 	const [list, setList] = useState<any>([]);
 	useEffect(() => {

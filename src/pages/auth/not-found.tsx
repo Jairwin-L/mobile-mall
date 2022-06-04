@@ -1,7 +1,7 @@
 import { Button, ErrorBlock } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom'
 
-export default () => {
+export default function NotFound () {
   const navigate = useNavigate();
 	return (
 		<ErrorBlock fullPage status='empty'>
